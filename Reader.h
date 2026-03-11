@@ -10,7 +10,8 @@ private:
     int booksCount;
 
 public:
-    Reader(string n = "Anonim", int i = 0, int c = 0);
+    Reader();
+    Reader(string n, int i = 0, int c = 0);
     Reader(string n, int i);
     ~Reader();
     void getInfo();
