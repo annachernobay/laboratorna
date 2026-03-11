@@ -1,7 +1,7 @@
 #include "Reader.h"
 
 Reader::Reader()
-    : name("Kessy"), booksCount(100) {
+    : name("Unknown"), booksCount(0) {
     cout << "Default constructor" << endl;
 }
 Reader::Reader(string n, int i, int c) : name(n), id(i), booksCount(c) {
@@ -13,7 +13,7 @@ Reader::Reader(string n, int i) : Reader(n, i, 0) {
 }
 
 Reader::~Reader() {
-    cout << "Destructor created" << endl;
+    cout << "Destructor was called" << endl;
 }
 
 void Reader::getInfo() {
