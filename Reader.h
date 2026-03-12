@@ -11,7 +11,7 @@ private:
 
 public:
     Reader();
-    Reader(string n, int i = 0, int c = 0);
+    Reader(string n, int i, int c);
     Reader(string n, int i);
     ~Reader();
     void getInfo();
