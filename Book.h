@@ -18,10 +18,15 @@ public:
     Book(Book&& other);
     ~Book();
 
-    void getInfo();
+    void getInfo() const;
 
     static int getBookCount();
-  
+    Book operator+(const Book& other) const;
+    Book operator!() const;
+
+
+    friend ostream& operator<<(ostream& out, const Book& b);
+    friend istream& operator>>(istream& in, Book& b);
 
 };
 
