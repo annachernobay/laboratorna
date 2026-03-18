@@ -15,7 +15,7 @@ public:
     Book(string t, string a, int y); 
     Book(string t, string a); 
     Book(const Book& other);
-    Book(Book&& other);
+    Book(Book&& other) noexcept;
     ~Book();
 
     void getInfo() const;
