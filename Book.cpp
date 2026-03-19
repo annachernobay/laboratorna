@@ -2,6 +2,23 @@
 
 int Book::bookCount = 0;
 
+Book& Book::operator=(const Book& other) {
+    if (this != &other) {
+        title = other.title;
+        author = other.author;
+        year = other.year;}
+    return *this;
+}
+
+Book& Book::operator=(Book&& other) noexcept {
+    if (this != &other) {
+        title = std::move(other.title);
+        author = std::move(other.author);
+        year = other.year;
+        other.year = 0;}
+    return *this;
+}
+
 Book::Book(const Book& other) {
     title = other.title;
     author = other.author;
@@ -47,24 +64,39 @@ void Book::getInfo() const{
     cout << "Book: " << title << " | Author: " << author << " | Year: " << year << endl;
 }
 
-int Book::getBookCount() {
+int Book::getBookCount() noexcept{
     return bookCount;
 }
 
 Book Book::operator+ (const Book& other) const {
-    return Book(title + " & " + other.title, author, year);
+    cout << "Overloaded operator + was called" << endl;
+
+    return Book(title + " + " + other.title,
+        author + " + " + other.author,
+        min(year, other.year));
+
 }
 
 Book Book::operator!() const {
+    cout << "Overloaded operator ! was called" << endl;
     return Book(title, author, year + 1);
 }
 
 ostream& operator<<(ostream& out, const Book& b) {
+    cout << "Ostream operator << was called" << endl;
     out << b.title << " | " << b.author << " | " << b.year;
     return out;
 }
 
 istream& operator>>(istream& in, Book& b) {
-    in >> b.title >> b.author >> b.year;
+    cout << "Istream operator >> was called" << endl;
+    cout << "Enter title: ";
+    getline(in, b.title);
+    cout << "Enter author: ";
+    getline(in, b.author);
+    cout << "Enter year: ";
+    in >> b.year;
+
     return in;
+
 }

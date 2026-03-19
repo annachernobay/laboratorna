@@ -20,9 +20,11 @@ public:
 
     void getInfo() const;
 
-    static int getBookCount();
+    static int getBookCount() noexcept;
     Book operator+(const Book& other) const;
     Book operator!() const;
+    Book& operator=(const Book& other);  
+    Book& operator=(Book&& other) noexcept; 
 
 
     friend ostream& operator<<(ostream& out, const Book& b);
