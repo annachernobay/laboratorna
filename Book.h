@@ -29,7 +29,6 @@ public:
 
     friend ostream& operator<<(ostream& out, const Book& b);
     friend istream& operator>>(istream& in, Book& b);
-
 };
 
 

@@ -30,5 +30,7 @@ int main() {
     r3.getInfo();
     l1.getInfo();
 
+    cout << "Enter title";
+
     return 0;
 }

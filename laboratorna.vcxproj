@@ -127,15 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AudioBook.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="laboratorna.cpp" />
     <ClCompile Include="Library.cpp" />
     <ClCompile Include="Reader.cpp" />
+    <ClCompile Include="UniversityLibrary.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AudioBook.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="Library.h" />
     <ClInclude Include="Reader.h" />
+    <ClInclude Include="UniversityLibrary.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

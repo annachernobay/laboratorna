@@ -98,5 +98,5 @@ istream& operator>>(istream& in, Book& b) {
     in >> b.year;
 
     return in;
-
 }
+
