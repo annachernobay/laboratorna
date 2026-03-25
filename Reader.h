@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "ContactInfo.h"
 using namespace std;
 
 class Reader {
@@ -8,6 +9,7 @@ private:
     string name;
     int id;
     int booksCount;
+    ContactInfo contact;
 
 public:
     Reader();
