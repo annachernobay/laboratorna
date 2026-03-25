@@ -12,6 +12,12 @@ Reader::Reader(string n, int i) : Reader(n, i, 0) {
     cout << "Delegating constructor" << endl; 
 }
 
+Reader::Reader(string n, int i, int c, const ContactInfo& contactInfo)
+    : name(n), id(i), booksCount(c), contact(contactInfo)
+{
+    cout << "Overloaded constructor with ContactInfo" << endl;
+}
+
 Reader::~Reader() {
     cout << "Destructor was called" << endl;
 }

@@ -1,6 +1,9 @@
 ﻿#include "Book.h"
 #include "Reader.h"
 #include "Library.h"
+#include "AudioBook.h"
+#include "UniversityLibrary.h"
+#include "ContactInfo.h"
 
 int main() {
     Book b1("C++ Basics", "Author A", 2000);
@@ -24,13 +27,30 @@ int main() {
 
     Library l1("Main street", 5000);
 
+    AudioBook a1("Prince", "Holly Black", 2000, "A girl", 12.3);
+    a1.getInfo();
+    AudioBook a2 = a1;        
+    AudioBook a3 = move(a1);
+
+
+    UniversityLibrary unlib1("Some address", 30000, "Programming", 2000);
+    unlib1.getInfo();
+    UniversityLibrary unlib2 = unlib1;
+    UniversityLibrary unlib3 = move(unlib1);
+
+
+    ContactInfo info1("123456789", "user@gmail.com");
+    Reader r4("Alex", 108, 2, info1);
+    
+    r4.getInfo();
+
+    
     b1.getInfo();
     r1.getInfo();
     r2.getInfo();
     r3.getInfo();
     l1.getInfo();
 
-    cout << "Enter title";
 
     return 0;
 }

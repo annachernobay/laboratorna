@@ -43,7 +43,7 @@ UniversityLibrary::UniversityLibrary() : Library(), speсialty("Unknown"), amoun
 }
 
 
-UniversityLibrary::UniversityLibrary(string address, int amountOfBooks, string specialty, int amountofStudents)
+UniversityLibrary::UniversityLibrary(string address, int amountOfBooks, string specialty, int amountOfStudents)
     : Library(address, amountOfBooks), 
     speсialty(move(specialty)),
     amountOfStudents(amountOfStudents) {
