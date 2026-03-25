@@ -13,5 +13,5 @@ public:
     Library(string address, int amountOfBooks = 50);
     Library(string address);
     ~Library();
-    void getInfo();
+    void getInfo() const;
 };

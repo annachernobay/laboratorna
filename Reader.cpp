@@ -16,6 +16,6 @@ Reader::~Reader() {
     cout << "Destructor was called" << endl;
 }
 
-void Reader::getInfo() {
+void Reader::getInfo() const{
     cout << "Reader: " << name << " | ID: " << id << " | Books: " << booksCount << endl;
 }

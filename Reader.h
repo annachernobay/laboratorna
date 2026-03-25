@@ -14,5 +14,5 @@ public:
     Reader(string n, int i, int c);
     Reader(string n, int i);
     ~Reader();
-    void getInfo();
+    void getInfo() const;
 };

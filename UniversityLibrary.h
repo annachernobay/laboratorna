@@ -8,11 +8,11 @@ class UniversityLibrary : public Library {
 
 private:
     string speсialty;
-    float duration;
+    int amountOfStudents;
 
 public:
     UniversityLibrary();
-    UniversityLibrary(string title, string author, int year, string whoReads, float duration);
+    UniversityLibrary(string address,int amountOfBooks, string specialty, int amountOfStudents);
     UniversityLibrary(const UniversityLibrary& other);
     UniversityLibrary(UniversityLibrary&& other) noexcept;
     ~UniversityLibrary();

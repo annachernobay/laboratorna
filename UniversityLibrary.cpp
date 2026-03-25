@@ -1,122 +1,62 @@
-#include "AudioBook.h"
+#include "UniversityLibrary.h"
 #include <string>
 using namespace std;
 
 UniversityLibrary& UniversityLibrary::operator=(const UniversityLibrary& other) {
     if (this != &other) {
-        Book::operator=(other);
-        whoReads = other.whoReads;
-        duration = other.duration;
+        Library::operator=(other);
+        speсialty = other.speсialty;
+        amountOfStudents = other.amountOfStudents;
     }
     return *this;
 }
 
-AudioBook& AudioBook::operator=(AudioBook&& other) noexcept {
+UniversityLibrary& UniversityLibrary::operator=(UniversityLibrary&& other) noexcept {
     if (this != &other) {
-        Book::operator=(move(other));
-        whoReads = move(other.whoReads);
-        duration = other.duration;
-        other.duration = 0;
+        Library::operator=(move(other));
+        speсialty = move(other.speсialty);
+        amountOfStudents = other.amountOfStudents;
+        other.amountOfStudents = 0;
     }
     return *this;
 }
 
-AudioBook::AudioBook(const AudioBook& other) : Book(other),
-    whoReads(other.whoReads),
-    duration(other.duration)
-{ cout << "AudioBook copied" << endl; }
+UniversityLibrary::UniversityLibrary(const UniversityLibrary& other) : Library(other),
+speсialty(other.speсialty),
+    amountOfStudents(other.amountOfStudents)
+{ cout << "UniversityLibrary copied" << endl; }
 
 
 
-AudioBook::AudioBook(AudioBook&& other) noexcept 
-    : Book(move(other)), 
-    whoReads(move(other.whoReads)),
-    duration(move(other.duration))
+UniversityLibrary::UniversityLibrary(UniversityLibrary&& other) noexcept
+    : Library(move(other)), 
+    speсialty(move(other.speсialty)),
+    amountOfStudents(move(other.amountOfStudents))
 {
-    other.duration = 0;
-    cout << "AudioBook moved" << endl;
+    other.amountOfStudents = 0;
+    cout << "UniversityLibrary moved" << endl;
 }
 
 
-AudioBook::AudioBook() : Book(), whoReads("Unknown"), duration(0) {
-    cout << "Default AudioBook constructor" << endl;
+UniversityLibrary::UniversityLibrary() : Library(), speсialty("Unknown"), amountOfStudents(0) {
+    cout << "Default UniversityLibrary constructor" << endl;
 }
 
 
-AudioBook::AudioBook(string title, string author, int year, string whoReads, float duration) 
-    : Book(title, author, year), 
-    whoReads(move(whoReads)),
-    duration(duration) {
+UniversityLibrary::UniversityLibrary(string address, int amountOfBooks, string specialty, int amountofStudents)
+    : Library(address, amountOfBooks), 
+    speсialty(move(specialty)),
+    amountOfStudents(amountOfStudents) {
     cout << "Overloaded constructor" << endl;
 }
 
 
-AudioBook::~AudioBook() {
-    cout << "AudioBook destructor was called" << endl;
+UniversityLibrary::~UniversityLibrary() {
+    cout << "UniversityLibrary destructor was called" << endl;
 }
 
-void AudioBook::getInfo() const {
-Book::getInfo();
-    cout << "Who reads: " <<whoReads<< " | Duration: " << duration << " hours " << endl;
-}
-
-& AudioBook::operator=(const AudioBook& other) {
-    if (this != &other) {
-        Book::operator=(other);
-        whoReads = other.whoReads;
-        duration = other.duration;
-    }
-    return *this;
-}
-
-AudioBook& AudioBook::operator=(AudioBook&& other) noexcept {
-    if (this != &other) {
-        Book::operator=(move(other));
-        whoReads = move(other.whoReads);
-        duration = other.duration;
-        other.duration = 0;
-    }
-    return *this;
-}
-
-AudioBook::AudioBook(const AudioBook& other) : Book(other),
-whoReads(other.whoReads),
-duration(other.duration)
-{
-    cout << "AudioBook copied" << endl;
-}
-
-
-
-AudioBook::AudioBook(AudioBook&& other) noexcept
-    : Book(move(other)),
-    whoReads(move(other.whoReads)),
-    duration(move(other.duration))
-{
-    other.duration = 0;
-    cout << "AudioBook moved" << endl;
-}
-
-
-AudioBook::AudioBook() : Book(), whoReads("Unknown"), duration(0) {
-    cout << "Default AudioBook constructor" << endl;
-}
-
-
-AudioBook::AudioBook(string title, string author, int year, string whoReads, float duration)
-    : Book(title, author, year),
-    whoReads(move(whoReads)),
-    duration(duration) {
-    cout << "Overloaded constructor" << endl;
-}
-
-
-AudioBook::~AudioBook() {
-    cout << "AudioBook destructor was called" << endl;
-}
-
-void AudioBook::getInfo() const {
-    Book::getInfo();
-    cout << "Who reads: " << whoReads << " | Duration: " << duration << " hours " << endl;
+void UniversityLibrary::getInfo() const {
+Library::getInfo();
+    cout << "Specialty: " <<speсialty<< " | Amount of students: " << amountOfStudents << endl;
 }
 

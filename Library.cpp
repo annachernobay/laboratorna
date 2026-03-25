@@ -22,6 +22,6 @@ Library::~Library() {
     cout << "Destructor was called" << endl;
 }
 
- void Library::getInfo() {
+ void Library::getInfo() const {
         cout << "Library: " << address << " | Amount of books: " << amountOfBooks << endl;}
 
