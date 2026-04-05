@@ -47,7 +47,7 @@ UniversityLibrary::UniversityLibrary(string address, int amountOfBooks, string s
     : Library(address, amountOfBooks), 
     speсialty(move(specialty)),
     amountOfStudents(amountOfStudents) {
-    cout << "Overloaded constructor" << endl;
+    cout << "UniversityLibrary Overloaded constructor" << endl;
 }
 
 

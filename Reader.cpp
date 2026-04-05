@@ -15,7 +15,7 @@ Reader::Reader(string n, int i) : Reader(n, i, 0) {
 Reader::Reader(string n, int i, int c, const ContactInfo& contactInfo)
     : name(n), id(i), booksCount(c), contact(contactInfo)
 {
-    cout << "Overloaded constructor with ContactInfo" << endl;
+    cout << "Overloaded constructor in Reader about child class ContactInfo" << endl;
 }
 
 Reader::~Reader() {

@@ -6,7 +6,9 @@
 #include "ContactInfo.h"
 
 int main() {
-    Book b1("C++ Basics", "Author A", 2000);
+  /* Book b1("C++ Basics", "Author A", 2000, 200);
+   b1.getReadingTime();
+  
     Book b2("Harry Potter", "Rowling", 2000);
     Book b3 = b1;
     Book b4 = move(b2);
@@ -25,13 +27,38 @@ int main() {
     Reader r2("Kessy", 1, 9);
     Reader r3("Test", 7);
 
-    Library l1("Main street", 5000);
+    Library l1("Main street", 5000);   
+    */  
 
-    AudioBook a1("Prince", "Holly Black", 2000, "A girl", 12.3);
-    a1.getInfo();
-    AudioBook a2 = a1;        
+
+
+
+
+    /*
+    
+    Book b1;
+    AudioBook a2("Fairytales", "Author 0", 2001, 203, "A woman", 2);
+
+    Book* pb = &a2;
+    pb->getInfo();
+
+   */
+    
+    Book* pb1 = new AudioBook("Courts", "Author 1", 2009, 202, "a man", 3.2);
+    pb1->getReadingTime();
+    delete pb1;
+
+
+    
+    
+
+
+
+
+    /* 
+    AudioBook a2 = a1;
     AudioBook a3 = move(a1);
-
+    
 
     UniversityLibrary unlib1("Some address", 30000, "Programming", 2000);
     unlib1.getInfo();
@@ -51,6 +78,6 @@ int main() {
     r3.getInfo();
     l1.getInfo();
 
-
+    */
     return 0;
 }

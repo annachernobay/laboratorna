@@ -9,16 +9,18 @@ private:
     string author;
     int year;
     static int bookCount;
+    int pages;
 
 public:
     Book();                         
-    Book(string t, string a, int y); 
+    Book(string t, string a, int y, int p); 
     Book(string t, string a); 
     Book(const Book& other);
     Book(Book&& other) noexcept;
-    ~Book();
+    virtual ~Book();
 
-    void getInfo() const;
+    virtual void getInfo() const;
+    virtual float getReadingTime() const;
 
     static int getBookCount() noexcept;
     Book operator+(const Book& other) const;

@@ -18,5 +18,5 @@ public:
     ContactInfo& operator=(const ContactInfo& other);
     ContactInfo& operator=(ContactInfo&& other) noexcept;
 
-    void getInfo() const;   // <-- важливо: це має співпадати з cpp
+    void getInfo() const;  
 };

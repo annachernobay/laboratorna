@@ -44,11 +44,11 @@ AudioBook::AudioBook() : Book(), whoReads("Unknown"), duration(0) {
 }
 
 
-AudioBook::AudioBook(string title, string author, int year, string whoReads, float duration) 
-    : Book(title, author, year), 
+AudioBook::AudioBook(string title, string author, int year,int pages, string whoReads, float duration) 
+    : Book(title, author, year, pages), 
     whoReads(move(whoReads)),
     duration(duration) {
-    cout << "Overloaded constructor" << endl;
+    cout << "AudioBook Overloaded constructor" << endl;
 }
 
 
@@ -61,3 +61,7 @@ Book::getInfo();
     cout << "Who reads: " <<whoReads<< " | Duration: " << duration << " hours " << endl;
 }
 
+float AudioBook::getReadingTime() const {
+    cout << "Reading time: " << duration << endl;
+    return duration;
+}
