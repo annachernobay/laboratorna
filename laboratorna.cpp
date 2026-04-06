@@ -4,6 +4,12 @@
 #include "AudioBook.h"
 #include "UniversityLibrary.h"
 #include "ContactInfo.h"
+#include "EBook.h"
+
+
+void showInfo(Book& book) {
+    book.getInfo();
+}
 
 int main() {
   /* Book b1("C++ Basics", "Author A", 2000, 200);
@@ -43,14 +49,23 @@ int main() {
     pb->getInfo();
 
    */
-    
+ 
+
+
+
+
+    /*
     Book* pb1 = new AudioBook("Courts", "Author 1", 2009, 202, "a man", 3.2);
     pb1->getReadingTime();
     delete pb1;
 
+    */
+    
+    AudioBook a("Courts", "Author 1", 2009, 202, "a man", 3.2);
+    EBook e("Title", "Author 2", 2010, 100, "epub", "book.com");
 
-    
-    
+    showInfo(a);
+    showInfo(e);
 
 
 

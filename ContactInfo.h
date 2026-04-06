@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class ContactInfo {
+class ContactInfo final{
 private:
     string phone;
     string email;
