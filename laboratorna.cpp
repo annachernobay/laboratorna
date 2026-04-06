@@ -65,7 +65,7 @@ int main() {
     EBook e("Title", "Author 2", 2010, 100, "epub", "book.com");
 
     showInfo(a);
-    showInfo(e);
+    showInfo(e); 
 
 
 

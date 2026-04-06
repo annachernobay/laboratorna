@@ -6,7 +6,7 @@ EBook& EBook::operator=(const EBook& other) {
     if (this != &other) {
         Book::operator=(other);
         format = other.format;
-        website = other.website;
+        website = other.website; 
     }
     return *this;
 }
