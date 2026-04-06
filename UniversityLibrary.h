@@ -20,6 +20,8 @@ public:
     UniversityLibrary& operator=(UniversityLibrary&& other) noexcept;
 
     void getInfo() const;
+    void showRules() const override;
+    
 
 };
 

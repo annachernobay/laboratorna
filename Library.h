@@ -14,4 +14,5 @@ public:
     Library(string address);
     ~Library();
     void getInfo() const;
+    virtual void showRules() const = 0;
 };
