@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "ContactInfo.h"
 using namespace std;
+#include "ContactInfo.h"
 
 class Reader {
 private:

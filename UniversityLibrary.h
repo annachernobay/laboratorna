@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "Library.h"
+#include "Interface.h"
 using namespace std;
 
 class UniversityLibrary : public Library {
@@ -21,6 +22,8 @@ public:
 
     void getInfo() const;
     void showRules() const override;
+    void open() const override;
+    void getStatus() const override;
     
 
 };

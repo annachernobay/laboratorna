@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Library.h"
+#include "Interface.h"
 using namespace std;
 
 Library::Library()
@@ -25,3 +26,10 @@ Library::~Library() {
  void Library::getInfo() const {
         cout << "Library: " << address << " | Amount of books: " << amountOfBooks << endl;}
 
+ void Library::open() const {
+     cout << "Library is opened!(the doors)" << endl;
+ }
+
+ void Library::getStatus() const{
+  cout << "It is a library" <<endl;
+ }

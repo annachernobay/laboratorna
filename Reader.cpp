@@ -1,4 +1,6 @@
+#include "ContactInfo.h"
 #include "Reader.h"
+#include "Interface.h"
 
 Reader::Reader()
     : name("Unknown"), booksCount(0) {

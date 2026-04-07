@@ -1,6 +1,7 @@
 #include "EBook.h"
 #include <string>
 using namespace std;
+#include "Interface.h"
 
 EBook& EBook::operator=(const EBook& other) {
     if (this != &other) {
@@ -56,4 +57,13 @@ EBook::~EBook() {
 void EBook::getInfo() const {
 Book::getInfo();
     cout << "Format: " <<format<< " | Website: " << website << endl;
+}
+
+void EBook::open() const {
+    cout << "EBook is opened" << endl;
+}
+
+
+void EBook::getStatus() const {
+    cout << "It is EBook" << endl;
 }

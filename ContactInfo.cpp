@@ -1,4 +1,6 @@
 #include "ContactInfo.h"
+#include "Interface.h"
+#include "Reader.h"
 #include <iostream>
 using namespace std;
 
@@ -49,4 +51,12 @@ ContactInfo::~ContactInfo() {
 void ContactInfo::getInfo() const {
     cout << "Phone: " << phone
         << " | Email: " << email << endl;
+}
+
+void ContactInfo::open() const {
+    cout << "You need a password to see the ContactInfo" << endl;
+}
+
+void ContactInfo::getStatus() const {
+    cout << "It ia ContactInfo" << endl;
 }

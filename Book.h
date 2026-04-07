@@ -1,9 +1,11 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Interface.h"
+
 using namespace std;
 
-class Book {
+class Book: public Interface {
 private:
     string title;
     string author;
@@ -21,6 +23,8 @@ public:
 
     virtual void getInfo() const;
     virtual float getReadingTime() const;
+    void open() const override;
+    void getStatus() const override;
 
     static int getBookCount() noexcept;
     Book operator+(const Book& other) const;

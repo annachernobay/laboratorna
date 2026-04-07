@@ -1,4 +1,5 @@
 #include "AudioBook.h"
+#include "Interface.h"
 #include <string>
 using namespace std;
 
@@ -64,4 +65,12 @@ Book::getInfo();
 float AudioBook::getReadingTime() const {
     cout << "Reading time: " << duration << endl;
     return duration;
+}
+
+void AudioBook::open() const {
+    cout << "AudioBook is opened" << endl;
+}
+
+void AudioBook::getStatus() const {
+    cout << "It is AudioBook" << endl;
 }

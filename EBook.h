@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 #include "Book.h"
+#include "Interface.h"
 
 class EBook : public Book {
 private: 
@@ -18,6 +19,8 @@ public:
     EBook& operator=(EBook&& other) noexcept;
 
     void getInfo() const override;
+    void open() const override;
+    void getStatus() const override;
 
 };
 

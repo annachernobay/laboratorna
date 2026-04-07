@@ -1,5 +1,6 @@
 #include "UniversityLibrary.h"
 #include <string>
+#include "Interface.h"
 using namespace std;
 
 UniversityLibrary& UniversityLibrary::operator=(const UniversityLibrary& other) {
@@ -66,4 +67,13 @@ void UniversityLibrary::showRules() const {
     cout << " Student ID required " << endl;;
     cout << " Max 7 books at a time "<< endl;
 
+}
+
+void UniversityLibrary::open() const { 
+    cout << "UniversiteLibrary is opened" <<endl;
+
+}
+
+void UniversityLibrary::getStatus() const {
+    cout << "It is UniversityLibrary" << endl;
 }

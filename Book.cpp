@@ -1,4 +1,5 @@
 #include "Book.h"
+#include "interface.h"
 
 int Book::bookCount = 0;
 
@@ -119,3 +120,10 @@ istream& operator>>(istream& in, Book& b) {
     return in;
 }
 
+void Book::open() const {
+    cout << "The Book is opened" << endl;
+}
+
+void Book::getStatus() const {
+    cout << "It is a book" << endl;
+}

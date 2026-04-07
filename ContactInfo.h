@@ -1,9 +1,10 @@
 #pragma once
+#include "Interface.h"
 #include <string>
 #include <iostream>
 using namespace std;
 
-class ContactInfo final{
+class ContactInfo final: public Interface{
 private:
     string phone;
     string email;
@@ -18,5 +19,7 @@ public:
     ContactInfo& operator=(const ContactInfo& other);
     ContactInfo& operator=(ContactInfo&& other) noexcept;
 
-    void getInfo() const;  
+    void getInfo() const;
+    void open() const override;
+    void getStatus() const override;
 };

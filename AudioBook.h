@@ -2,10 +2,10 @@
 #include <iostream>
 #include <string>
 #include "Book.h"
+#include "Interface.h"
 using namespace std;
 
 class AudioBook : public Book {
-
     private:
         string whoReads;
         float duration;
@@ -20,6 +20,8 @@ class AudioBook : public Book {
         AudioBook& operator=(AudioBook&& other) noexcept;
 
       void getInfo() const override; 
+      void open() const override;
+      void getStatus() const override;
       float getReadingTime() const override;
 
   
