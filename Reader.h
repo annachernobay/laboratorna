@@ -16,6 +16,6 @@ public:
     Reader(string n, int i, int c);
     Reader(string n, int i);
     Reader(string n, int i, int c, const ContactInfo& contactInfo);
-    ~Reader();
+    virtual ~Reader();
     void getInfo() const;
 };

@@ -14,7 +14,7 @@ public:
     ContactInfo(string phone, string email);
     ContactInfo(const ContactInfo& other);
     ContactInfo(ContactInfo&& other) noexcept;
-    ~ContactInfo();
+    ~ContactInfo() override;
 
     ContactInfo& operator=(const ContactInfo& other);
     ContactInfo& operator=(ContactInfo&& other) noexcept;

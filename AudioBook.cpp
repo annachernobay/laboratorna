@@ -1,6 +1,7 @@
 #include "AudioBook.h"
 #include "Interface.h"
 #include <string>
+#include "Book.h"
 using namespace std;
 
 
@@ -24,8 +25,8 @@ AudioBook& AudioBook::operator=(AudioBook&& other) noexcept {
 }
 
 AudioBook::AudioBook(const AudioBook& other) : Book(other),
-    whoReads(other.whoReads),
-    duration(other.duration)
+whoReads(other.whoReads),
+duration(other.duration)
 { cout << "AudioBook copied" << endl; }
 
 

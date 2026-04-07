@@ -6,17 +6,24 @@
 #include "ContactInfo.h"
 #include "EBook.h"
 #include "Interface.h"
+void showOpen(Book& book)
+{
+    book.open();
+}
 
+void showStatus(Book& book) {
+    book.getStatus();
+}
 /*
 void showInfo(Book& book) {
     book.getInfo();
 }
 */
 
-void showInfo(Library& lib)
+/*void showInfo(Library& lib)
 {
     lib.showRules();
-}
+}*/
 int main() {
   /* Book b1("C++ Basics", "Author A", 2000, 200);
    b1.getReadingTime();
@@ -73,14 +80,20 @@ int main() {
     showInfo(a);
     showInfo(e);  */
 
-
+/*
     UniversityLibrary unlib1("Some address", 30000, "Programming", 2000);
 
-    showInfo(unlib1);
+    showInfo(unlib1);*/
 
 
 
-
+    AudioBook a("Courts", "Author 1", 2009, 202, "a man", 3.2);
+    EBook e("Title", "Author 2", 2010, 100, "epub", "book.com");
+ 
+    showOpen(a);
+    showOpen(e);
+    showStatus(a);
+    showStatus(e);
 
 
 

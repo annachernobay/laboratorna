@@ -27,6 +27,7 @@ public:
     void getStatus() const override;
 
     static int getBookCount() noexcept;
+
     Book operator+(const Book& other) const;
     Book operator!() const;
     Book& operator=(const Book& other);  

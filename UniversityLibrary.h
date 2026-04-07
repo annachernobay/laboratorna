@@ -16,11 +16,11 @@ public:
     UniversityLibrary(string address,int amountOfBooks, string specialty, int amountOfStudents);
     UniversityLibrary(const UniversityLibrary& other);
     UniversityLibrary(UniversityLibrary&& other) noexcept;
-    ~UniversityLibrary();
+    ~UniversityLibrary() override;
     UniversityLibrary& operator=(const UniversityLibrary& other);
     UniversityLibrary& operator=(UniversityLibrary&& other) noexcept;
 
-    void getInfo() const;
+    void getInfo() const override;
     void showRules() const override;
     void open() const override;
     void getStatus() const override;

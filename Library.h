@@ -13,8 +13,8 @@ public:
     Library();
     Library(string address, int amountOfBooks);
     Library(string address);
-    ~Library();
-    void getInfo() const;
+    virtual ~Library();
+    virtual void getInfo() const;
     virtual void showRules() const = 0;
     void open() const override;
     void getStatus() const override;
