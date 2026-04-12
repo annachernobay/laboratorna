@@ -6,14 +6,16 @@
 #include "ContactInfo.h"
 #include "EBook.h"
 #include "Interface.h"
-void showOpen(Book& book)
-{
-    book.open();
-}
 
-void showStatus(Book& book) {
-    book.getStatus();
-}
+
+//void showOpen(Book& book)
+//{
+//    book.open();
+//}
+//
+//void showStatus(Book& book) {
+//    book.getStatus();
+//}
 /*
 void showInfo(Book& book) {
     book.getInfo();
@@ -87,22 +89,13 @@ int main() {
 
 
 
-    AudioBook a("Courts", "Author 1", 2009, 202, "a man", 3.2);
-    EBook e("Title", "Author 2", 2010, 100, "epub", "book.com");
+    //AudioBook a("Courts", "Author 1", 2009, 202, "a man", 3.2);
+    //EBook e("Title", "Author 2", 2010, 100, "epub", "book.com");
  
-    showOpen(a);
-    showOpen(e);
-    showStatus(a);
-    showStatus(e);
-
-
-
-
-
-
-
-
-
+    //showOpen(a);
+    //showOpen(e);
+    //showStatus(a);
+    //showStatus(e);
     /* 
     AudioBook a2 = a1;
     AudioBook a3 = move(a1);
@@ -126,6 +119,34 @@ int main() {
     r3.getInfo();
     l1.getInfo();
 
-    */
+   */
+    
+    cout << "********************" << "Enter 1 if you are an administrator" << "********************" << endl;
+    cout << "********************" << "Enter 2 if you are plain user" << "********************" << endl;
+    int number; 
+    cin>>number;
+
+    if (number == 1) {
+        string password;
+        int adminModificator;
+        cout << "Enter password: " << endl;
+        cin >> password;
+        cout << "*******************" << "Updating info!" << "*******************" << endl;
+            cout << "If you want to add a book to library enter 3" << endl;
+            cout << "If you want to change info about reader enter 4" << endl;
+            cout << "If you want to change info about library enter 5" << endl;
+            cin >> adminModificator;
+            if (adminModificator == 3) {
+            }
+            if (adminModificator == 4) {
+            }
+            if (adminModificator == 5) {
+            }
+    }
+    if (number == 2) {
+        cout << "*******************" << "Reading info!" << "*******************" <<endl;
+    }
+    
+
     return 0;
 }
