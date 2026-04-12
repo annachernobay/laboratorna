@@ -27,3 +27,21 @@ Reader::~Reader() {
 void Reader::getInfo() const{
     cout << "Reader: " << name << " | ID: " << id << " | Books: " << booksCount << endl;
 }
+
+ostream& operator<<(ostream& out, const Reader& r) {
+    cout << "Reader ostream operator << was called" << endl;
+    out << "Reader: " << r.name << " | " << "ID: " << r.id << " | " << "Books: " << r.booksCount << " | "<< endl;
+    return out;
+}
+
+istream& operator>>(istream& in, Reader& r) {
+    cout << "Reader istream operator >> was called" << endl;
+    cout << "Enter name: ";
+    getline(in >> ws, r.name);
+    cout << "Enter ID: ";
+    in >> r.id;
+    cout << "Enter number of books: ";
+    in >> r.booksCount;
+
+    return in;
+}

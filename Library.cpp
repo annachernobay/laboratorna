@@ -33,3 +33,20 @@ Library::~Library() {
  void Library::getStatus() const{
   cout << "It is a library" <<endl;
  }
+
+
+ ostream& operator<<(ostream& out, const Library& l) {
+     cout << "Library ostream operator << was called" << endl;
+     out << "Address: " << l.address << " | " << "Amount of books: " << l.amountOfBooks << " | " << endl;
+     return out;
+ }
+
+ istream& operator>>(istream& in, Library& l) {
+     cout << "Library istream operator >> was called" << endl;
+     cout << "Enter address: ";
+     getline(in >> ws, l.address);
+     cout << "Enter amount of books: ";
+     in >> l.amountOfBooks;
+
+     return in;
+ }

@@ -60,14 +60,14 @@ void UniversityLibrary::getInfo() const {
 Library::getInfo();
     cout << "Specialty: " <<speсialty<< " | Amount of students: " << amountOfStudents << endl;
 }
-
-void UniversityLibrary::showRules() const {
-    cout << " University Library Rules: "<<endl;
-    cout << " Open 8:00–22:00 " << endl;
-    cout << " Student ID required " << endl;;
-    cout << " Max 7 books at a time "<< endl;
-
-}
+//
+//void UniversityLibrary::showRules() const {
+//    cout << " University Library Rules: "<<endl;
+//    cout << " Open 8:00–22:00 " << endl;
+//    cout << " Student ID required " << endl;;
+//    cout << " Max 7 books at a time "<< endl;
+//
+//}
 
 void UniversityLibrary::open() const { 
     cout << "UniversiteLibrary is opened" <<endl;

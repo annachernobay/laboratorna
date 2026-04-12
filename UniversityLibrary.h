@@ -21,7 +21,7 @@ public:
     UniversityLibrary& operator=(UniversityLibrary&& other) noexcept;
 
     void getInfo() const override;
-    void showRules() const override;
+    //void showRules() const override;
     void open() const override;
     void getStatus() const override;
     

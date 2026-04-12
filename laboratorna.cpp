@@ -6,7 +6,8 @@
 #include "ContactInfo.h"
 #include "EBook.h"
 #include "Interface.h"
-
+#include <fstream>
+#include <memory>
 
 //void showOpen(Book& book)
 //{
@@ -121,8 +122,8 @@ int main() {
 
    */
     
-    cout << "********************" << "Enter 1 if you are an administrator" << "********************" << endl;
-    cout << "********************" << "Enter 2 if you are plain user" << "********************" << endl;
+    cout << "******************** " << "Enter 1 if you are an administrator" << " ******************** " << endl;
+    cout << "************************ " << "Enter 2 if you are plain user" << " *********************** " << endl;
     int number; 
     cin>>number;
 
@@ -133,14 +134,44 @@ int main() {
         cin >> password;
         cout << "*******************" << "Updating info!" << "*******************" << endl;
             cout << "If you want to add a book to library enter 3" << endl;
-            cout << "If you want to change info about reader enter 4" << endl;
-            cout << "If you want to change info about library enter 5" << endl;
+            cout << "If you want to add info about reader enter 4" << endl;
+            cout << "If you want to add info about library enter 5" << endl;
             cin >> adminModificator;
             if (adminModificator == 3) {
+
+                ofstream fileWrite;
+                unique_ptr<Book> p1 = make_unique<Book>();
+                fileWrite.open("File.txt", ofstream::app);
+
+                cout << "Enter info about new book: " << endl;
+                cin >> *p1;
+                fileWrite << *p1;
+                fileWrite.close();
+                cout << "Book successfully added!" << endl;
+    
             }
             if (adminModificator == 4) {
+
+                ofstream fileWrite;
+                unique_ptr<Reader> p1 = make_unique<Reader>();
+                fileWrite.open("File.txt", ofstream::app);
+
+                cout << "Enter info about new reader: " << endl;
+                cin >> *p1;
+                fileWrite << *p1;
+                fileWrite.close();
+                cout << "Reader successfully added!" << endl;
             }
             if (adminModificator == 5) {
+                ofstream fileWrite;
+                unique_ptr<Library> p1 = make_unique<Library>();
+                fileWrite.open("File.txt", ofstream::app);
+
+                cout << "Enter info about new library: " << endl;
+                cin >> *p1;
+                fileWrite << *p1;
+                fileWrite.close();
+                cout << "Library successfully added!" << endl;
             }
     }
     if (number == 2) {

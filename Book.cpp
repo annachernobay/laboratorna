@@ -101,15 +101,15 @@ Book Book::operator!() const {
 }
 
 ostream& operator<<(ostream& out, const Book& b) {
-    cout << "Ostream operator << was called" << endl;
-    out << b.title << " | " << b.author << " | " << b.year << b.pages << " | ";
+    cout << "Book ostream operator << was called" << endl;
+    out << "Title: " << b.title << " | " << "Author: " << b.author << " | " << "Year: " << b.year << " | " << "Pages: " << b.pages << " | " << endl;
     return out;
 }
 
 istream& operator>>(istream& in, Book& b) {
-    cout << "Istream operator >> was called" << endl;
+    cout << "Book istream operator >> was called" << endl;
     cout << "Enter title: ";
-    getline(in, b.title);
+    getline(in >> ws, b.title);
     cout << "Enter author: ";
     getline(in, b.author);
     cout << "Enter year: ";

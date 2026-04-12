@@ -18,4 +18,8 @@ public:
     Reader(string n, int i, int c, const ContactInfo& contactInfo);
     virtual ~Reader();
     void getInfo() const;
+
+
+    friend ostream& operator<<(ostream& out, const Reader& r);
+    friend istream& operator>>(istream& in, Reader& r);
 };
