@@ -132,50 +132,63 @@ int main() {
         int adminModificator;
         cout << "Enter password: " << endl;
         cin >> password;
-        cout << "*******************" << "Updating info!" << "*******************" << endl;
+        cout << "*******************" << "Administrator!" << "*******************" << endl;
             cout << "If you want to add a book to library enter 3" << endl;
             cout << "If you want to add info about reader enter 4" << endl;
             cout << "If you want to add info about library enter 5" << endl;
             cin >> adminModificator;
             if (adminModificator == 3) {
 
-                ofstream fileWrite;
+                ofstream file;
                 unique_ptr<Book> p1 = make_unique<Book>();
-                fileWrite.open("File.txt", ofstream::app);
+                file.open("File.txt", ofstream::app);
 
                 cout << "Enter info about new book: " << endl;
                 cin >> *p1;
-                fileWrite << *p1;
-                fileWrite.close();
+                file << *p1;
+                file.close();
                 cout << "Book successfully added!" << endl;
     
             }
             if (adminModificator == 4) {
 
-                ofstream fileWrite;
+                ofstream file;
                 unique_ptr<Reader> p1 = make_unique<Reader>();
-                fileWrite.open("File.txt", ofstream::app);
+                file.open("File.txt", ofstream::app);
 
                 cout << "Enter info about new reader: " << endl;
                 cin >> *p1;
-                fileWrite << *p1;
-                fileWrite.close();
+                file << *p1;
+                file.close();
                 cout << "Reader successfully added!" << endl;
             }
             if (adminModificator == 5) {
-                ofstream fileWrite;
+                ofstream file;
                 unique_ptr<Library> p1 = make_unique<Library>();
-                fileWrite.open("File.txt", ofstream::app);
+                file.open("File.txt", ofstream::app);
 
                 cout << "Enter info about new library: " << endl;
                 cin >> *p1;
-                fileWrite << *p1;
-                fileWrite.close();
+                file << *p1;
+                file.close();
                 cout << "Library successfully added!" << endl;
             }
     }
     if (number == 2) {
-        cout << "*******************" << "Reading info!" << "*******************" <<endl;
+        int userModificator;
+        cout << "*******************" << "User!" << "*******************" << endl;
+        cout << "If you want to see read info that wrote administrator enter 6" << endl;
+        cin >> userModificator;
+        if (userModificator == 6) {
+            ifstream file;
+            string line;
+            file.open("File.txt");
+                    while (getline(file, line))
+                    {
+                        cout << line << endl;
+                    }
+            file.close();
+            }
     }
     
 
