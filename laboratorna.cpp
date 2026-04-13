@@ -9,6 +9,26 @@
 #include <fstream>
 #include <memory>
 
+void findBook(const string& bookName)
+{
+    string line;
+    ifstream file;
+    bool found = false;
+    file.open("File.txt");
+    while (getline(file, line))
+    {
+        if (line.find(bookName) != string::npos) {
+            found = true;
+        }
+    }
+    if (found) {
+        cout << "Book is here!" << endl;
+    }
+    else { cout << "Book is absent!" << endl; }
+    file.close();
+
+};
+
 //void showOpen(Book& book)
 //{
 //    book.open();
@@ -121,7 +141,7 @@ int main() {
     l1.getInfo();
 
    */
-    
+
     cout << "******************** " << "Enter 1 if you are an administrator" << " ******************** " << endl;
     cout << "************************ " << "Enter 2 if you are plain user" << " *********************** " << endl;
     int number; 
@@ -178,6 +198,7 @@ int main() {
         int userModificator;
         cout << "*******************" << "User!" << "*******************" << endl;
         cout << "If you want to see read info that wrote administrator enter 6" << endl;
+        cout << "If you want to find book enter 7" << endl;
         cin >> userModificator;
         if (userModificator == 6) {
             ifstream file;
@@ -189,6 +210,13 @@ int main() {
                     }
             file.close();
             }
+        if (userModificator == 7)
+        {
+            string name;
+            cout << "Enter name of book: " << endl;
+            cin >> name;
+            findBook(name);
+        }
     }
     
 
