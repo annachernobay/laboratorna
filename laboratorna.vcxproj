@@ -134,6 +134,7 @@
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="laboratorna.cpp" />
     <ClCompile Include="Library.cpp" />
+    <ClCompile Include="MyException.cpp" />
     <ClCompile Include="Reader.cpp" />
     <ClCompile Include="UniversityLibrary.cpp" />
   </ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="EBook.h" />
     <ClInclude Include="Interface.h" />
     <ClInclude Include="Library.h" />
+    <ClInclude Include="MyException.h" />
     <ClInclude Include="Reader.h" />
     <ClInclude Include="UniversityLibrary.h" />
   </ItemGroup>
