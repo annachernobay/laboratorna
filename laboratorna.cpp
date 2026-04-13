@@ -9,13 +9,24 @@
 #include <fstream>
 #include <memory>
 
+void history(const string& bookName, bool found) {
+    unique_ptr<ofstream> p1 = make_unique<ofstream>("History.txt", ios::app);
+
+    if (found) {
+        *p1 << "Search: " << bookName << " | Result: Found" << endl;
+}
+    else
+    {  *p1 << "Search: " << bookName << " | Result: Not found" << endl;
+}
+
+
+}
 void findBook(const string& bookName)
 {
     string line;
-    ifstream file;
+    unique_ptr<ifstream> file = make_unique<ifstream>("File.txt");
     bool found = false;
-    file.open("File.txt");
-    while (getline(file, line))
+    while (getline(*file, line))
     {
         if (line.find(bookName) != string::npos) {
             found = true;
@@ -25,8 +36,9 @@ void findBook(const string& bookName)
         cout << "Book is here!" << endl;
     }
     else { cout << "Book is absent!" << endl; }
-    file.close();
+    file->close();
 
+    history(bookName, found);
 };
 
 //void showOpen(Book& book)
@@ -144,8 +156,20 @@ int main() {
 
     cout << "******************** " << "Enter 1 if you are an administrator" << " ******************** " << endl;
     cout << "************************ " << "Enter 2 if you are plain user" << " *********************** " << endl;
+    cout << "*********************** " << "If you want to see user history enter 0" << " ***********************" << endl;
     int number; 
     cin>>number;
+
+    if (number == 0) {
+        ifstream file;
+        string line;
+        file.open("History.txt");
+        while (getline(file,line))
+        {
+            cout << line << endl;
+        }
+        file.close();
+    }
 
     if (number == 1) {
         string password;
