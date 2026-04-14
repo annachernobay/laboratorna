@@ -1,15 +1,15 @@
 #pragma once
 #include <string>
 #include<exception>
-using namespace std;
 
-class MyException : public exception
+
+class MyException : public std::exception
 {
 private:
-	string message;
+	std::string message;
 public: 
 	MyException();
-	MyException(const string& msg);
+	MyException(const std::string& msg);
 	const char* what() const noexcept override;
 };
 

@@ -2,13 +2,13 @@
 #include <string>
 #include <iostream>
 #include <exception>
-using namespace std;
-MyException::MyException():message("Unknown") {cout<< "MyException default constructor" << endl;
+
+MyException::MyException():message("Unknown") {std::cout<< "MyException default constructor" << std::endl;
 }
 
-MyException::MyException(const string& msg) :message(msg)
+MyException::MyException(const std::string& msg) :message(msg)
 {
-	cout << "MyException overloaded constructor" << endl;
+	std::cout << "MyException overloaded constructor" << std::endl;
 }
 const char* MyException::what() const noexcept
 {
